@@ -18,9 +18,8 @@ public class Representante {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	// @SequenceGenerator (name="", sequenceName="" )
 	@Column(name = "CODIGO_REPRESENTANTE")
-	private long codigo;
+	private String codigo;
 
 	@Column(name = "RAZAOSOC_REPRESENTANTE")
 	private String razaoSocial;
@@ -36,7 +35,7 @@ public class Representante {
 
 	}
 
-	public Representante(long codigo, String razaoSocial, String senha, List<Cliente> cliente) {
+	public Representante(String codigo, String razaoSocial, String senha, List<Cliente> cliente) {
 		super();
 		this.codigo = codigo;
 		this.razaoSocial = razaoSocial;
@@ -44,7 +43,7 @@ public class Representante {
 		this.cliente = cliente;
 	}
 
-	public long getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
@@ -56,7 +55,7 @@ public class Representante {
 		this.cliente = cliente;
 	}
 
-	public void setCodigo(long codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
@@ -76,12 +75,11 @@ public class Representante {
 		this.senha = senha;
 	}
 
+	
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (codigo ^ (codigo >>> 32));
-		return result;
+	public String toString() {
+		return "Representante [codigo=" + codigo + ", razaoSocial=" + razaoSocial + ", senha=" + senha + ", cliente="
+				+ cliente + "]";
 	}
 
 	@Override

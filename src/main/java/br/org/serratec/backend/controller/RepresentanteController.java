@@ -3,9 +3,9 @@ package br.org.serratec.backend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +13,7 @@ import br.org.serratec.backend.DTO.RepresentanteDTO;
 import br.org.serratec.backend.service.RepresentanteService;
 
 @RestController
-@RequestMapping("/representantes")
+@RequestMapping("api/representantes")
 public class RepresentanteController {
 
 	@Autowired
@@ -21,14 +21,10 @@ public class RepresentanteController {
 
 	@GetMapping
 	public ResponseEntity<List<RepresentanteDTO>> listar (){
-		return ResponseEntity.ok(representanteService.listar());
+		List<RepresentanteDTO> representantes = representanteService.buscarTodos();
+		return ResponseEntity.status(HttpStatus.OK).body(representantes);
 	}
-	
-	@GetMapping("/validar/{codigo}/{senha}")
-	public ResponseEntity<RepresentanteDTO> buscarPorCodigoESenha(@PathVariable long codigo, @PathVariable String senha){
-		return ResponseEntity.ok(representanteService.buscarPorCodigoESenha(codigo, senha));
-	}
-	
-	// TESTE GIT BRAYAN 20:25
 	
 }
+	
+	
