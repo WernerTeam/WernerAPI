@@ -23,6 +23,6 @@ public class ClienteController {
 		return ResponseEntity.ok(clienteService.listar());
 	}
 	
-	//Teste Git
+	//Teste Git de novo
 
 }
