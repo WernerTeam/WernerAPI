@@ -22,5 +22,7 @@ public class ClienteController {
 	public ResponseEntity<List<ClienteDTO>> listar(){
 		return ResponseEntity.ok(clienteService.listar());
 	}
+	
+	//Teste Git
 
 }
