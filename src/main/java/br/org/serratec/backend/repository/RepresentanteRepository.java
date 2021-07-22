@@ -1,13 +1,18 @@
 package br.org.serratec.backend.repository;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.org.serratec.backend.model.Representante;
 
+import java.util.Optional;
+
+import org.springframework.stereotype.Repository;
+
+
+
+@Repository
 public interface RepresentanteRepository extends JpaRepository<Representante, Long> {
 
-	List<Representante> findById(long codigo);
-	Representante findByCodigoAndSenha(long codigo, String senha);
+	Optional<Representante> findByCodigo(String codigo);
+	
 }

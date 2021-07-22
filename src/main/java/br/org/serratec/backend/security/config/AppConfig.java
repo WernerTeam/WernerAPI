@@ -1,4 +1,4 @@
-package br.org.serratec.backend.config;
+package br.org.serratec.backend.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

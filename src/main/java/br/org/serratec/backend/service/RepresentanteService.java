@@ -15,9 +15,8 @@ public class RepresentanteService {
 
 	@Autowired
 	private RepresentanteRepository representanteRepository;
-		
-	
-	public List <RepresentanteDTO> listar() {
+
+	public List<RepresentanteDTO> buscarTodos() {
 		List<Representante> representantes = representanteRepository.findAll();
 		List<RepresentanteDTO> representantesDTO = new ArrayList<RepresentanteDTO>();
 		for (Representante representante : representantes) {
@@ -25,32 +24,7 @@ public class RepresentanteService {
 			representantesDTO.add(representanteDTO);
 		}
 		return representantesDTO;
-		
+
 	}
-	
-	
-	public RepresentanteDTO buscarPorCodigoESenha(long codigo, String senha) {
-		return new RepresentanteDTO(representanteRepository.findByCodigoAndSenha(codigo, senha));
-	}
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
