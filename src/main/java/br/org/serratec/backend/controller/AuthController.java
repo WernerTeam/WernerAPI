@@ -31,9 +31,7 @@ public class AuthController {
 	@Autowired
 	RepresentanteService userService;
 
-	@Autowired
-	PasswordEncoder encoder;
-
+	
 	@Autowired
 	JwtUtils jwtUtils;
 
