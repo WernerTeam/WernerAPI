@@ -1,6 +1,5 @@
 package br.org.serratec.backend.model;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,15 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.org.serratec.backend.enums.StatusPedItem;
+
 @Entity
 @Table(name = "ESTAMPDESENHOSPEDIDOS")
+@SecondaryTable(name = "ESTAMPDESENHOSPEDIDOSITENS")
 public class PedidoDesenvolvimentoEstampado {
 
 	@Id
@@ -27,23 +28,41 @@ public class PedidoDesenvolvimentoEstampado {
 	private long codigoEstampado;
 
 	@Column(name = "DATAESTDESPED")
-	//@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
-	private LocalDate dataPedido;
+	private Date dataPedido;
 
+	@Column(table ="ESTAMPDESENHOSPEDIDOSITENS" , name = "CODIGO_ARTIGO")
+	private long CodArtigo;
+
+	@Column(table = "ESTAMPDESENHOSPEDIDOSITENS" , name = "CODIGO_DESENHO")
+	private long CodDesenho;
+	
+	@Column(table = "ESTAMPDESENHOSPEDIDOSITENS", name = "CODIGO_VARIANTE")
+	private String codVariante;
+	
+	@Column(table = "ESTAMPDESENHOSPEDIDOSITENS", name = "STATUS_ESTDESPEDITE")
+	private StatusPedItem statuspeditem;
+	
+		
 	@JsonBackReference
 	@OneToMany
 	@JoinColumn(name = "CODIGO_CLIENTE")
 	private Cliente cliente;
+	
+	public PedidoDesenvolvimentoEstampado() {
+		// TODO Auto-generated constructor stub
+	}
 
-	public PedidoDesenvolvimentoEstampado(long codigoEstampado, LocalDate dataPedido, Cliente cliente) {
+	public PedidoDesenvolvimentoEstampado(long codigoEstampado, Date dataPedido, long codArtigo, long codDesenho,
+			String codVariante, StatusPedItem statuspeditem, Cliente cliente) {
 		super();
 		this.codigoEstampado = codigoEstampado;
 		this.dataPedido = dataPedido;
+		CodArtigo = codArtigo;
+		CodDesenho = codDesenho;
+		this.codVariante = codVariante;
+		this.statuspeditem = statuspeditem;
 		this.cliente = cliente;
-	}
-
-	public PedidoDesenvolvimentoEstampado() {
 	}
 
 	public long getCodigoEstampado() {
@@ -54,12 +73,44 @@ public class PedidoDesenvolvimentoEstampado {
 		this.codigoEstampado = codigoEstampado;
 	}
 
-	public LocalDate getDataPedido() {
+	public Date getDataPedido() {
 		return dataPedido;
 	}
 
-	public void setDataPedido(LocalDate dataPedido) {
+	public void setDataPedido(Date dataPedido) {
 		this.dataPedido = dataPedido;
+	}
+
+	public long getCodArtigo() {
+		return CodArtigo;
+	}
+
+	public void setCodArtigo(long codArtigo) {
+		CodArtigo = codArtigo;
+	}
+
+	public long getCodDesenho() {
+		return CodDesenho;
+	}
+
+	public void setCodDesenho(long codDesenho) {
+		CodDesenho = codDesenho;
+	}
+
+	public String getCodVariante() {
+		return codVariante;
+	}
+
+	public void setCodVariante(String codVariante) {
+		this.codVariante = codVariante;
+	}
+
+	public StatusPedItem getStatuspeditem() {
+		return statuspeditem;
+	}
+
+	public void setStatuspeditem(StatusPedItem statuspeditem) {
+		this.statuspeditem = statuspeditem;
 	}
 
 	public Cliente getCliente() {
@@ -91,6 +142,11 @@ public class PedidoDesenvolvimentoEstampado {
 			return false;
 		return true;
 	}
+	
+	
+	
+
+	
 	
 	
 
