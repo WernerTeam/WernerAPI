@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "ARTIGOSCORES")
@@ -28,7 +29,7 @@ public class CorDesenvolvida {
 	private String descricao;
 
 	@Column(name = "DTCOR_ARTIGOSCORES")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private Date dataPedidoCorArt;
 
 	@JsonBackReference
