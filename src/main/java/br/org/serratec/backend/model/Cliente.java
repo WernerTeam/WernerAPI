@@ -1,5 +1,7 @@
 package br.org.serratec.backend.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table (name = "CLIENTE")
@@ -27,17 +31,18 @@ public class Cliente {
 	@ManyToOne
 	@JoinColumn (name = "CODIGO_REPRESENTANTE1")
 	private Representante representante;
+	
+	@JsonManagedReference
+	@OneToMany
+	private List<Estampado> estampados;
 
-	public Cliente(long codigoCliente, String razaoSocialCliente, Representante representante) {
-		super();
-		this.codigoCliente = codigoCliente;
-		this.razaoSocialCliente = razaoSocialCliente;
-		this.representante = representante;
-	}
-	public Cliente() {
-		// TODO Auto-generated constructor stub
-	}
 
+	public List<Estampado> getEstampados() {
+		return estampados;
+	}
+	public void setEstampados(List<Estampado> estampados) {
+		this.estampados = estampados;
+	}
 	public long getCodigoCliente() {
 		return codigoCliente;
 	}

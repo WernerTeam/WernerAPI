@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RepresentanteRepository extends JpaRepository<Representante, Long> {
 
-	Optional<Representante> findByCodigo(String codigo);
+	public Optional<Representante> findByCodigo(String codigo);
 	
 }
