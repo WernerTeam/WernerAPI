@@ -1,5 +1,6 @@
 package br.org.serratec.backend.model;
 
+
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,5 +26,5 @@ public class CorDesenvolvimento {
 	@Column(name = "DTENVICLI_ARTIGOSCORSOLICART")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private Date dataPedidoCorCart;
-	
+
 }

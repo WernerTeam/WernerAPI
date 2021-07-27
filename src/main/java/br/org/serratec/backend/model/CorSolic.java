@@ -17,13 +17,13 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "ARTIGOSCORSOLIC")
-public class CorSolic {
+ public class CorSolic {
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CODCOR_ARTIGOSCORSOLIC")
-	private long codigoCor;
+	private Long codigoCor;
 
 	@Column(name = "DTSOLIC_ARTIGOSCORSOLIC")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -93,7 +93,6 @@ public class CorSolic {
 			return false;
 		return true;
 	}
-	
 	
 	
 }

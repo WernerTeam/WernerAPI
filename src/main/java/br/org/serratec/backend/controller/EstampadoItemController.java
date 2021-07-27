@@ -8,21 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.org.serratec.backend.DTO.ClienteDTO;
-import br.org.serratec.backend.service.ClienteService;
+import br.org.serratec.backend.DTO.EstampadoItemDTO;
+import br.org.serratec.backend.service.EstampadoItemService;
 
 @RestController
-@RequestMapping ("api/auth/clientes")
-public class ClienteController {
-	
+@RequestMapping ("api/auth/estampadosItens")
+public class EstampadoItemController {
 	@Autowired
-	ClienteService clienteService;
+	EstampadoItemService estampadoItemService;
+	
 	
 	@GetMapping
-	public ResponseEntity<List<ClienteDTO>> listar(){
-		return ResponseEntity.ok(clienteService.listar());
+	public ResponseEntity<List<EstampadoItemDTO>> listar (){
+		return ResponseEntity.ok(estampadoItemService.listar());
 	}
-	
-	//Teste Git de novo
 
 }
