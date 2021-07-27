@@ -12,19 +12,13 @@ public class ClienteDTO {
 		this.razaoSocialCliente = cliente.getRazaoSocialCliente();
 	}
 	
-	
-
 	public String getRazaoSocialCliente() {
 		return razaoSocialCliente;
 	}
 
-
-
 	public void setRazaoSocialCliente(String razaoSocialCliente) {
 		this.razaoSocialCliente = razaoSocialCliente;
 	}
-
-
 
 	public long getCodigoCliente() {
 		return codigoCliente;
@@ -33,10 +27,6 @@ public class ClienteDTO {
 	public void setCodigoCliente(long codigoCliente) {
 		this.codigoCliente = codigoCliente;
 	}
-	
-	
-	
-	
-	
+
 }
 
