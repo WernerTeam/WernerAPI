@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "ARTIGOSCORES")
@@ -28,13 +29,37 @@ public class CorDesenvolvida {
 	private String descricao;
 
 	@Column(name = "DTCOR_ARTIGOSCORES")
-	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private Date dataPedidoCorArt;
 
 	@JsonBackReference
 	@OneToMany
 	@JoinColumn(name = "CODIGO_CLIENTE")
-	private Cliente cliente;	
+	private Cliente cliente;
+
+	public CorDesenvolvida(long codigoCorArt, String descricao, Date dataPedidoCorArt, Cliente cliente) {
+		super();
+		this.codigoCorArt = codigoCorArt;
+		this.descricao = descricao;
+		this.dataPedidoCorArt = dataPedidoCorArt;
+		this.cliente = cliente;
+	}
+
+	public long getCodigoCorArt() {
+		return codigoCorArt;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public Date getDataPedidoCorArt() {
+		return dataPedidoCorArt;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
 	
 	
 	

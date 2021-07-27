@@ -9,14 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import br.org.serratec.backend.enums.StatusPedItem;
 
 @Entity
 @Table(name = "ESTAMPDESENHOSPEDIDOS")
@@ -68,24 +65,13 @@ public void setDataPedido(Date dataPedido) {
 	this.dataPedido = dataPedido;
 }
 
-
-/**
- * @return the cliente
- */
 public Cliente getCliente() {
 	return cliente;
 }
 
-
-/**
- * @param cliente the cliente to set
- */
 public void setCliente(Cliente cliente) {
 	this.cliente = cliente;
-}
-
-
-	
+}	
 	
 
 }
