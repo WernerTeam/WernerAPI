@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.org.serratec.backend.model.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
-	public List<Cliente> findById (long codigoCliente);
+	public List<Cliente> findByCodigoCliente (long codigoCliente);
 	public Cliente findByRazaoSocialCliente (String razaoSocialCliente);
 	
 	
