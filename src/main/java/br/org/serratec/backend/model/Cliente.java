@@ -35,8 +35,30 @@ public class Cliente {
 	@JsonManagedReference
 	@OneToMany
 	private List<Estampado> estampados;
+	
+	@JsonManagedReference
+	private List<CorSolic> corSolic;
+	
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
 
 
+	public Cliente(long codigoCliente, String razaoSocialCliente, Representante representante,
+			List<Estampado> estampados, List<CorSolic> corSolic) {
+		super();
+		this.codigoCliente = codigoCliente;
+		this.razaoSocialCliente = razaoSocialCliente;
+		this.representante = representante;
+		this.estampados = estampados;
+		this.corSolic = corSolic;
+	}
+	public List<CorSolic> getCorSolic() {
+		return corSolic;
+	}
+	public void setCorSolic(List<CorSolic> corSolic) {
+		this.corSolic = corSolic;
+	}
 	public List<Estampado> getEstampados() {
 		return estampados;
 	}
