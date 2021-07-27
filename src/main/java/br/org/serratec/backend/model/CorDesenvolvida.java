@@ -35,7 +35,31 @@ public class CorDesenvolvida {
 	@JsonBackReference
 	@OneToMany
 	@JoinColumn(name = "CODIGO_CLIENTE")
-	private Cliente cliente;	
+	private Cliente cliente;
+
+	public CorDesenvolvida(long codigoCorArt, String descricao, Date dataPedidoCorArt, Cliente cliente) {
+		super();
+		this.codigoCorArt = codigoCorArt;
+		this.descricao = descricao;
+		this.dataPedidoCorArt = dataPedidoCorArt;
+		this.cliente = cliente;
+	}
+
+	public long getCodigoCorArt() {
+		return codigoCorArt;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public Date getDataPedidoCorArt() {
+		return dataPedidoCorArt;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
 	
 	
 	
