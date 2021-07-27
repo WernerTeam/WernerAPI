@@ -23,7 +23,7 @@ public class CorDesenvolvida {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CODIGO_COR")
-	private long codigoCorArt;
+	private String codigoCorArt;
 	
 	@Column(name = "DESCRICAO_COR")
 	private String descricao;
@@ -37,7 +37,7 @@ public class CorDesenvolvida {
 	@JoinColumn(name = "CODIGO_CLIENTE")
 	private Cliente cliente;
 
-	public CorDesenvolvida(long codigoCorArt, String descricao, Date dataPedidoCorArt, Cliente cliente) {
+	public CorDesenvolvida(String codigoCorArt, String descricao, Date dataPedidoCorArt, Cliente cliente) {
 		super();
 		this.codigoCorArt = codigoCorArt;
 		this.descricao = descricao;
@@ -45,21 +45,41 @@ public class CorDesenvolvida {
 		this.cliente = cliente;
 	}
 
-	public long getCodigoCorArt() {
+	public String getCodigoCorArt() {
 		return codigoCorArt;
+	}
+
+	public void setCodigoCorArt(String codigoCorArt) {
+		this.codigoCorArt = codigoCorArt;
 	}
 
 	public String getDescricao() {
 		return descricao;
 	}
 
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
 	public Date getDataPedidoCorArt() {
 		return dataPedidoCorArt;
+	}
+
+	public void setDataPedidoCorArt(Date dataPedidoCorArt) {
+		this.dataPedidoCorArt = dataPedidoCorArt;
 	}
 
 	public Cliente getCliente() {
 		return cliente;
 	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	
+
+	
 	
 	
 	
