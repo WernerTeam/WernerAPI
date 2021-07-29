@@ -1,13 +1,13 @@
 package br.org.serratec.backend.enums;
 
-public enum StatusPedItem {
+public enum Status {
 	C(0),
 	E(1),
 	L(2);
 	
 	private Integer codigo;
 	
-	private StatusPedItem(Integer codigo) {
+	private Status(Integer codigo) {
 		this.codigo = codigo;
 	}
 	
@@ -15,8 +15,8 @@ public enum StatusPedItem {
 		return codigo;
 	}
 	
-	public static StatusPedItem valueOf(Integer codigo) {
-		for (StatusPedItem status : StatusPedItem.values()) {
+	public static Status valueOf(Integer codigo) {
+		for (Status status : Status.values()) {
 			if (status.getCodigo() == codigo) {
 				return status;
 			}

@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.org.serratec.backend.model.Cliente;
+import br.org.serratec.backend.DTO.CorDesenvolvimentoDTO;
 import br.org.serratec.backend.model.CorDesenvolvimento;
 
 public interface CorDesenvolvimentoRepository extends JpaRepository<CorDesenvolvimento, Long>{
 	
-	public List<CorDesenvolvimento> findByCodigo (Cliente codigoCliente);
-	public List<CorDesenvolvimento> findByDate (Date dataPedidosCorCart);
+	public CorDesenvolvimentoDTO findByCodigoCor (Long codigoCor);
+	public List<CorDesenvolvimentoDTO> findByDate (Date dataPedidoCorCart);
 }

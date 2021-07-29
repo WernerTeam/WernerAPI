@@ -1,6 +1,6 @@
 package br.org.serratec.backend.DTO;
 
-import br.org.serratec.backend.enums.StatusPedItem;
+import br.org.serratec.backend.enums.Status;
 import br.org.serratec.backend.model.Estampado;
 import br.org.serratec.backend.model.EstampadoItem;
 
@@ -11,7 +11,7 @@ public class EstampadoItemDTO {
 	private Long codigoDesenho;
 	private Long codigoVariante;
 	private Estampado codigoEstampado;
-	private StatusPedItem status;
+	private Status status;
 	
 	public EstampadoItemDTO() {
 		// TODO Auto-generated constructor stub
@@ -57,10 +57,10 @@ public class EstampadoItemDTO {
 	public void setCodigoEstampado(Estampado codigoEstampado) {
 		this.codigoEstampado = codigoEstampado;
 	}
-	public StatusPedItem getStatus() {
+	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(StatusPedItem status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 	

@@ -15,7 +15,7 @@ import br.org.serratec.backend.DTO.CorDesenvolvidaDTO;
 import br.org.serratec.backend.service.CorDesenvolvidaService;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/auth/cores")
 public class CorDesenvolvidaController {
 	
 			
@@ -27,10 +27,11 @@ public class CorDesenvolvidaController {
 			return ResponseEntity.ok(corDesenvolvidaService.listar());
 		}
 		
-		//@GetMapping ("/{id}")
-		//public ResponseEntity<CorDesenvolvidaDTO> buscar (@PathVariable Long id){
-			//return ResponseEntity.ok(corDesenvolvidaService.buscar(id));
-		//}
+		
+		@GetMapping ("/{id}")
+		public ResponseEntity<CorDesenvolvidaDTO> buscar (@PathVariable String id){
+		return ResponseEntity.ok(corDesenvolvidaService.buscar(id));
+		}
 		
 		@GetMapping ("/cliente")
 		public ResponseEntity<List<CorDesenvolvidaDTO>> buscarCliente (@RequestParam (value = "cliente") String cliente){

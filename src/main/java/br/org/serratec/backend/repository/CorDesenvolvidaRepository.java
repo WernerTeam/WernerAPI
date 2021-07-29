@@ -11,9 +11,9 @@ import br.org.serratec.backend.model.CorDesenvolvida;
 
 @Repository
 public interface CorDesenvolvidaRepository extends JpaRepository<CorDesenvolvida, Long> { 
+	
 	public  CorDesenvolvidaDTO findBycodigoCorArtcodigoCorArt (String codigoCorArt);
-	public List <CorDesenvolvidaDTO> findBydescricao (String descricao);
-	public List <CorDesenvolvidaDTO> findBycodigodataPedidoCorArt (Date dataPedidoCorArt);
+	public List <CorDesenvolvidaDTO> findByClienteRazaoSocialClienteContaining (String razaoSocialCliente);
 	public List <CorDesenvolvidaDTO> findByDataPedidoCorArtLessThanEqual (Date dataPedidoCorArt);
 	public List <CorDesenvolvidaDTO> findByDataPedidoCorArtGreaterThanEqual (Date dataPedidoCorArt);
 }

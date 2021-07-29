@@ -1,15 +1,14 @@
 package br.org.serratec.backend.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.org.serratec.backend.DTO.CorDesenvolvimentoDTO;
-import br.org.serratec.backend.model.Cliente;
 import br.org.serratec.backend.model.CorDesenvolvimento;
-import br.org.serratec.backend.repository.ClienteRepository;
 import br.org.serratec.backend.repository.CorDesenvolvimentoRepository;
 
 @Service
@@ -17,9 +16,7 @@ public class CorDesenvolvimentoService {
 
 	@Autowired
 	private CorDesenvolvimentoRepository corDesenvolvimentoRepository;
-	
-	@Autowired
-	private ClienteRepository clienteRepository;
+
 	
 	public List<CorDesenvolvimentoDTO> listar(){
 		List<CorDesenvolvimentoDTO> coresDesenvolvimentoDTO = new ArrayList<CorDesenvolvimentoDTO>();
@@ -31,7 +28,13 @@ public class CorDesenvolvimentoService {
 		return coresDesenvolvimentoDTO;
 	}
 	
-	public CorDesenvolvimentoDTO findByCodigo (Cliente codigoCliente) {
-		return new CorDesenvolvimentoDTO (corDesenvolvimentoRepository.findByCodigo(codigoCliente));
+	public CorDesenvolvimentoDTO buscarCodigo (Long codigoCor) {
+		return corDesenvolvimentoRepository.findByCodigoCor(codigoCor);
 	}
+	
+	public List<CorDesenvolvimentoDTO> buscarData (Date dataPedidoCorCart) {
+		return corDesenvolvimentoRepository.findByDate(dataPedidoCorCart);
+	
+}
+
 }

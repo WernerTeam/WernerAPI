@@ -4,14 +4,15 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.org.serratec.backend.model.Cliente;
 import br.org.serratec.backend.model.CorDesenvolvida;
 
 public class CorDesenvolvidaDTO {
 	private String descricao;
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private Date dataPedidoCorArt;
-	private String CodigoCor;
-	
+	private String codigoCor;
+	private Cliente cliente;
 	
 	public CorDesenvolvidaDTO() {
 		super();
@@ -21,7 +22,8 @@ public class CorDesenvolvidaDTO {
 		super();
 		this.descricao = corDesenvolvida.getDescricao();
 		this.dataPedidoCorArt = corDesenvolvida.getDataPedidoCorArt();
-		this.CodigoCor = corDesenvolvida.getCodigoCorArt();
+		this.codigoCor = corDesenvolvida.getCodigoCorArt();
+		this.cliente = corDesenvolvida.getCliente();
 	}
 	public String getDescricao() {
 		return descricao;
@@ -36,21 +38,17 @@ public class CorDesenvolvidaDTO {
 		this.dataPedidoCorArt = dataPedidoCorArt;
 	}
 	public String getCodigoCor() {
-		return CodigoCor;
+		return codigoCor;
 	}
 	public void setCodigoCor(String codigoCor) {
-		CodigoCor = codigoCor;
+		this.codigoCor = codigoCor;
 	}
-	
-	
-	
-
-	
-	
-
-
-	
-	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 	
 	
 	

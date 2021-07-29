@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.org.serratec.backend.DTO.CorSolicDTO;
-import br.org.serratec.backend.DTO.EstampadoDTO;
 import br.org.serratec.backend.model.CorSolic;
 import br.org.serratec.backend.repository.CorSolicRepository;
 

@@ -3,47 +3,54 @@ package br.org.serratec.backend.DTO;
 import java.util.Date;
 
 import br.org.serratec.backend.model.CorDesenvolvimento;
+import br.org.serratec.backend.model.CorSolic;
 
 public class CorDesenvolvimentoDTO {
-	private long codigoCorCart;
-	private long codigoArtigo;
-	private Date dataPedidosCorCart;
+	private CorSolic codigoCor;
+	private Long codigoArtigo;
+	private Date dataPedidoCorCart;
 	
-	public CorDesenvolvimentoDTO(long codigoCorCart, long codigoArtigo, Date dataPedidosCorCart) {
+		public CorDesenvolvimentoDTO(CorDesenvolvimento corDesenvolvimento) {
 		super();
-		this.codigoCorCart = codigoCorCart;
-		this.codigoArtigo = codigoArtigo;
-		this.dataPedidosCorCart = dataPedidosCorCart;
+		this.codigoCor = corDesenvolvimento.getCodigoCor();
+		this.codigoArtigo = corDesenvolvimento.getCodigoArtigo();
+		this.dataPedidoCorCart = corDesenvolvimento.getDataPedidoCorCart();
 	}
 
+		
+		public CorDesenvolvimentoDTO() {
+			// TODO Auto-generated constructor stub
+		}
 
-	public CorDesenvolvimentoDTO(CorDesenvolvimento corDesenvolvimento) {
-		// TODO Auto-generated constructor stub
-	}
+
+		public CorSolic getCodigoCor() {
+			return codigoCor;
+		}
 
 
-	public long getCodigoCorCart() {
-		return codigoCorCart;
-	}
+		public void setCodigoCor(CorSolic codigoCor) {
+			this.codigoCor = codigoCor;
+		}
 
-	public void setCodigoCorCart(long codigoCorCart) {
-		this.codigoCorCart = codigoCorCart;
-	}
 
-	public long getCodigoArtigo() {
-		return codigoArtigo;
-	}
+		public Long getCodigoArtigo() {
+			return codigoArtigo;
+		}
 
-	public void setCodigoArtigo(long codigoArtigo) {
-		this.codigoArtigo = codigoArtigo;
-	}
 
-	public Date getDataPedidosCorCart() {
-		return dataPedidosCorCart;
-	}
+		public void setCodigoArtigo(Long codigoArtigo) {
+			this.codigoArtigo = codigoArtigo;
+		}
 
-	public void setDataPedidosCorCart(Date dataPedidosCorCart) {
-		this.dataPedidosCorCart = dataPedidosCorCart;
-	}
-	
+
+		public Date getDataPedidoCorCart() {
+			return dataPedidoCorCart;
+		}
+
+
+		public void setDataPedidoCorCart(Date dataPedidosCorCart) {
+			this.dataPedidoCorCart = dataPedidosCorCart;
+		}
+
+		
 }

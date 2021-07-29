@@ -10,8 +10,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import br.org.serratec.backend.enums.StatusPedItem;
+import br.org.serratec.backend.enums.Status;
 
 @Entity
 @Table(name = "ESTAMPDESENHOSPEDIDOSITENS")
@@ -38,11 +39,14 @@ public class EstampadoItem {
 	
 	
 	@Column (name = "STATUS_ESTDESPEDITE")
-	private StatusPedItem status;
+	private Status status;
+	
+	@JsonManagedReference
+	private ArtigoFun artigoFun;
 
 
 	public EstampadoItem(Long idEstampadoItem, String codigoArtigo, Long codigoDesenho, Long codigoVariante,
-			Estampado codigoEstampado, StatusPedItem status) {
+			Estampado codigoEstampado, Status status) {
 		super();
 		this.idEstampadoItem = idEstampadoItem;
 		this.codigoArtigo = codigoArtigo;
@@ -107,12 +111,12 @@ public class EstampadoItem {
 	}
 
 
-	public StatusPedItem getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(StatusPedItem status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 
