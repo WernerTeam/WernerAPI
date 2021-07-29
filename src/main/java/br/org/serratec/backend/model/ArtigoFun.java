@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -21,18 +22,22 @@ public class ArtigoFun {
 	private Long idArtigoFun;
 	
 	@JsonBackReference
+	@OneToOne
 	@JoinColumn(name = "CODIGO_ARTIGO")
 	private EstampadoItem codigoArtigo;
 	
 	@JsonBackReference
+	@OneToOne
 	@JoinColumn(name  = "CODIGO_DESENHO")
 	private EstampadoItem codigoDesenho;
 	
 	@JsonBackReference
+	@OneToOne
 	@JoinColumn(name  = "CODIGO_VARIANTE")
 	private EstampadoItem codigoCor;
 	
 	@JsonManagedReference
+	@OneToOne
 	private ItemPedidoVenda itemPedidoVenda;
 	
 	public ArtigoFun() {
