@@ -11,6 +11,10 @@ public class CorSolicDTO {
 	private Date dataPedidoCor;
 	private Cliente cliente;
 	
+	public CorSolicDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public CorSolicDTO(CorSolic corSolic) {
 		super();
 		this.codigoCor = corSolic.getCodigoCor();

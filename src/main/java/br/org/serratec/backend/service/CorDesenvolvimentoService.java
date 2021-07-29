@@ -33,7 +33,7 @@ public class CorDesenvolvimentoService {
 	}
 	
 	public List<CorDesenvolvimentoDTO> buscarData (Date dataPedidoCorCart) {
-		return corDesenvolvimentoRepository.findByDate(dataPedidoCorCart);
+		return corDesenvolvimentoRepository.findByDataPedidoCorCart(dataPedidoCorCart);
 	
 }
 

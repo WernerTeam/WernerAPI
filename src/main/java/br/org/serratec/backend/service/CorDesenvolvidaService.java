@@ -17,15 +17,6 @@ public class CorDesenvolvidaService {
 	@Autowired
 	private CorDesenvolvidaRepository corDesenvolvidaRepository;
 	
-//	public List<EstampadoItemDTO> listar(){
-//	List<EstampadoItemDTO> estampadosItensDTO = new ArrayList <EstampadoItemDTO>();
-//	List<EstampadoItem> estampadosItens = estampadoItemRepository.findAll();
-//	for (EstampadoItem estampadoItem : estampadosItens) {
-//		EstampadoItemDTO estampadoItemDTO = new EstampadoItemDTO(estampadoItem);
-//		estampadosItensDTO.add(estampadoItemDTO);
-//	}
-//	return estampadosItensDTO;
-//}
 	
 	public List<CorDesenvolvidaDTO> listar () { 
 		List<CorDesenvolvidaDTO> coresDTO = new ArrayList <CorDesenvolvidaDTO>();
@@ -38,7 +29,7 @@ public class CorDesenvolvidaService {
 	}
 	
 	public CorDesenvolvidaDTO buscar (String corDesenvolvida) {
-		return corDesenvolvidaRepository.findBycodigoCorArtcodigoCorArt(corDesenvolvida);
+		return corDesenvolvidaRepository.findByCodigoCorArt(corDesenvolvida);
 		
 	}
 	

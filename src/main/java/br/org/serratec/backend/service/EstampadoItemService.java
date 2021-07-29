@@ -27,7 +27,7 @@ public class EstampadoItemService {
 	}
 	
 	public EstampadoItemDTO buscar (Long idEstampadoItem) {
-		return estampadoItemRepository.findByIdestampadoItem(idEstampadoItem);
+		return estampadoItemRepository.findByIdEstampadoItem(idEstampadoItem);
 	}
 	
 
