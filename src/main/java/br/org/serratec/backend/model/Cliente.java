@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -37,7 +38,8 @@ public class Cliente {
 	private List<Estampado> estampados;
 	
 	@JsonManagedReference
-	private List<CorSolic> corSolic;
+	@OneToOne
+	private CorSolic corSolic;
 	
 	public Cliente() {
 		// TODO Auto-generated constructor stub
@@ -45,7 +47,7 @@ public class Cliente {
 
 
 	public Cliente(long codigoCliente, String razaoSocialCliente, Representante representante,
-			List<Estampado> estampados, List<CorSolic> corSolic) {
+			List<Estampado> estampados, CorSolic corSolic) {
 		super();
 		this.codigoCliente = codigoCliente;
 		this.razaoSocialCliente = razaoSocialCliente;
@@ -53,10 +55,10 @@ public class Cliente {
 		this.estampados = estampados;
 		this.corSolic = corSolic;
 	}
-	public List<CorSolic> getCorSolic() {
+	public CorSolic getCorSolic() {
 		return corSolic;
 	}
-	public void setCorSolic(List<CorSolic> corSolic) {
+	public void setCorSolic(CorSolic corSolic) {
 		this.corSolic = corSolic;
 	}
 	public List<Estampado> getEstampados() {

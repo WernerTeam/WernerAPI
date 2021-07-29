@@ -7,7 +7,7 @@ import br.org.serratec.backend.model.EstampadoItem;
 public class EstampadoItemDTO {
 	
 	private Long idEstampadoItem;
-	private String codigoArtigo;
+	private Long codigoArtigo;
 	private Long codigoDesenho;
 	private Long codigoVariante;
 	private Estampado codigoEstampado;
@@ -33,10 +33,10 @@ public class EstampadoItemDTO {
 	public void setIdEstampadoItem(Long idEstampadoItem) {
 		this.idEstampadoItem = idEstampadoItem;
 	}
-	public String getCodigoArtigo() {
+	public Long getCodigoArtigo() {
 		return codigoArtigo;
 	}
-	public void setCodigoArtigo(String codigoArtigo) {
+	public void setCodigoArtigo(Long codigoArtigo) {
 		this.codigoArtigo = codigoArtigo;
 	}
 	public Long getCodigoDesenho() {

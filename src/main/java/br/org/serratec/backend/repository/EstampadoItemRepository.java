@@ -7,7 +7,7 @@ import br.org.serratec.backend.model.EstampadoItem;
 
 public interface EstampadoItemRepository extends JpaRepository<EstampadoItem, Long>{
 	
-	public EstampadoItemDTO findByIdestampadoItem (Long idEstampadoItem);
+	public EstampadoItemDTO findByIdEstampadoItem (Long idEstampadoItem);
 	
 	
 
