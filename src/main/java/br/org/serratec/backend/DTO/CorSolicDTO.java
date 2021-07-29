@@ -10,6 +10,7 @@ public class CorSolicDTO {
 	private Long codigoCor;
 	private Date dataPedidoCor;
 	private Cliente cliente;
+	
 	public CorSolicDTO(CorSolic corSolic) {
 		super();
 		this.codigoCor = corSolic.getCodigoCor();

@@ -8,11 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -33,7 +30,7 @@ public class CorDesenvolvida {
 	private Date dataPedidoCorArt;
 
 	@JsonBackReference
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name = "CODIGO_CLIENTE")
 	private Cliente cliente;
 

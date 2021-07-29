@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
+
 @Entity
 @Table(name = "ESTAMPDESENHOSPEDIDOS")
 public class Estampado {
@@ -30,8 +31,7 @@ public class Estampado {
 	@Column(name = "DATA_ESTDESPED")
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
 	private Date dataPedido;
-
-		
+	
 	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "CODIGO_CLIENTE")
@@ -51,8 +51,6 @@ public Estampado(long codigoEstampado, Date dataPedido) {
 	this.codigoEstampado = codigoEstampado;
 	this.dataPedido = dataPedido;
 }
-
-
 
 public List<EstampadoItem> getEstampadoItem() {
 	return estampadoItem;

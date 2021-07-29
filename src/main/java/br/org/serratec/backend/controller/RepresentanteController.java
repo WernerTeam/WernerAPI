@@ -13,7 +13,7 @@ import br.org.serratec.backend.DTO.RepresentanteDTO;
 import br.org.serratec.backend.service.RepresentanteService;
 
 @RestController
-@RequestMapping("api/representantes")
+@RequestMapping("api/auth/representantes")
 public class RepresentanteController {
 
 	@Autowired

@@ -17,14 +17,23 @@ public class CorDesenvolvidaService {
 	@Autowired
 	private CorDesenvolvidaRepository corDesenvolvidaRepository;
 	
+//	public List<EstampadoItemDTO> listar(){
+//	List<EstampadoItemDTO> estampadosItensDTO = new ArrayList <EstampadoItemDTO>();
+//	List<EstampadoItem> estampadosItens = estampadoItemRepository.findAll();
+//	for (EstampadoItem estampadoItem : estampadosItens) {
+//		EstampadoItemDTO estampadoItemDTO = new EstampadoItemDTO(estampadoItem);
+//		estampadosItensDTO.add(estampadoItemDTO);
+//	}
+//	return estampadosItensDTO;
+//}
+	
 	public List<CorDesenvolvidaDTO> listar () { 
-		List<CorDesenvolvidaDTO> coresDTO = new ArrayList<CorDesenvolvidaDTO>();
-		List<CorDesenvolvida>cores = corDesenvolvidaRepository.findAll();
-		for(CorDesenvolvida corDesenvolvida : cores) {
-			CorDesenvolvidaDTO corDTO = new CorDesenvolvidaDTO(corDesenvolvida);
-			//coresDTO.add(coresDTO);
+		List<CorDesenvolvidaDTO> coresDTO = new ArrayList <CorDesenvolvidaDTO>();
+		List<CorDesenvolvida> cores = corDesenvolvidaRepository.findAll();
+		for(CorDesenvolvida cor : cores) {
+			CorDesenvolvidaDTO corDTO = new CorDesenvolvidaDTO(cor);
+			coresDTO.add(corDTO);
 		}
-		
 		return coresDTO;
 	}
 	
@@ -32,10 +41,11 @@ public class CorDesenvolvidaService {
 		return corDesenvolvidaRepository.findBycodigoCorArtcodigoCorArt(corDesenvolvida);
 		
 	}
-	public List<CorDesenvolvidaDTO> buscarCliente (String descricao) {
-		return corDesenvolvidaRepository.findBydescricao(descricao);
-	}
 	
+	public List<CorDesenvolvidaDTO> buscarCliente (String razaoSocialCliente){
+		return corDesenvolvidaRepository.findByClienteRazaoSocialClienteContaining(razaoSocialCliente);
+	}
+		
 	public List<CorDesenvolvidaDTO> buscarDataInicial (Date dataPedidoCorArt) {
 		return corDesenvolvidaRepository.findByDataPedidoCorArtLessThanEqual(dataPedidoCorArt);
 		
