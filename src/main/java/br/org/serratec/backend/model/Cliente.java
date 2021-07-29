@@ -45,6 +45,7 @@ public class Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public Cliente(long codigoCliente, String razaoSocialCliente, Representante representante,
 			List<Estampado> estampados, CorSolic corSolic) {
 		super();
@@ -54,7 +55,18 @@ public class Cliente {
 		this.estampados = estampados;
 		this.corSolic = corSolic;
 	}
-
+	public CorSolic getCorSolic() {
+		return corSolic;
+	}
+	public void setCorSolic(CorSolic corSolic) {
+		this.corSolic = corSolic;
+	}
+	public List<Estampado> getEstampados() {
+		return estampados;
+	}
+	public void setEstampados(List<Estampado> estampados) {
+		this.estampados = estampados;
+	}
 	public long getCodigoCliente() {
 		return codigoCliente;
 	}
@@ -79,22 +91,6 @@ public class Cliente {
 		this.representante = representante;
 	}
 
-	public List<Estampado> getEstampados() {
-		return estampados;
-	}
-
-	public void setEstampados(List<Estampado> estampados) {
-		this.estampados = estampados;
-	}
-
-	public CorSolic getCorSolic() {
-		return corSolic;
-	}
-
-	public void setCorSolic(CorSolic corSolic) {
-		this.corSolic = corSolic;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -116,7 +112,8 @@ public class Cliente {
 			return false;
 		return true;
 	}
-
-
 	
+		
+	
+
 }
